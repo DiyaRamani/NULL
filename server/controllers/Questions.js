@@ -88,27 +88,27 @@ export const voteQuestion = async(req,res) => {
         if (value === 'upVote'){
             if(downIndex !== -1){
                 question.downVote = question.downVote.filter((id) => id !== String(userId))
-                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:20}})
+                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:20}},{new:true})
             }
             if(upIndex === -1){
                 question.upVote.push(userId)
-                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:20}})
+                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:20}},{new:true})
             }else{
-                question.upVote = question.upVote.filter((id) => id!==String(userId))
-                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:-20}})
+                question.upVote = question.upVote.filter((id) => id!==String(userId),{new:true})
+                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:-20}},{new:true})
             }
         }
         else if (value === 'downVote'){
             if(upIndex !== -1){
                 question.upVote = question.upVote.filter((id) => id !== String(userId))
-                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:-20}})
+                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:-20}},{new:true})
             }
             if(downIndex === -1){
                 question.downVote.push(userId)
-                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:-20}})
+                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:-20}},{new:true})
             }else{
                 question.downVote = question.downVote.filter((id) => id !== String(userId))
-                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:20}})
+                point = await User.findByIdAndUpdate(userIdposted,{$inc:{point:20}},{new:true})
             }
         }
         await Questions.findByIdAndUpdate(_id,question)
