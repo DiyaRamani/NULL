@@ -53,7 +53,7 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
         }
       />
       <Route
-        path="/uploads"
+        path="/uploadsAp09"
         element={
           <VideoUploader/>
         }
