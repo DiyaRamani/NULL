@@ -98,7 +98,7 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
                   currentProfile?.point >= 0 && currentProfile?.point < 50
                     ? (
                       <>
-                        <img src={s1} alt="" style={{ width: '75px', height: '75px', marginBottom: '3px',}} />
+                        <img src={s1} alt="" style={{ width: '75px', height: '75px', marginBottom: '3px',marginLeft:'50px'}} />
                         <h5 style={{marginBottom: '10px', textAlign:'center',fontSize:'12px'}}>Beginner</h5>
                       </>
                     )
