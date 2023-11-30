@@ -36,7 +36,7 @@ function Videoplayer({ slideIn, handleSlideIn }) {
       </h1>
       <div style={{ width: '800px', height: '450px' }}>
           <video controls ref={player}  >
-            <source src={`http://localhost:5000/${vv.filePath}`} type="video/mp4" />
+            <source src={`https://intern-f7feadbf478c.herokuapp.com/${vv.filePath}`} type="video/mp4" />
           </video>
       </div>
     </div>
