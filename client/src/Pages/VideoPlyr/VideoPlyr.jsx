@@ -21,8 +21,8 @@ function Videoplayer({ slideIn, handleSlideIn }) {
         plyr.on('dblclick',(e)=>{
           console.log(e.clientX)
           if(e.clientX < 500) {plyr.rewind(5)}
-          else if(e.clientX < 650 && e.clientX > 500 ) {plyr.togglePlay()}
-          else if(e.clientX > 650) {plyr.forward(10)} 
+          else if(e.clientX < 700 && e.clientX > 500 ) {plyr.togglePlay()}
+          else if(e.clientX > 700) {plyr.forward(10)} 
         })
     }
 }, []);
