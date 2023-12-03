@@ -20,7 +20,7 @@ function Videoplayer({ slideIn, handleSlideIn }) {
 
         plyr.on('dblclick',(e)=>{
           //console.log(e.clientX)
-          if(e.clientX < 600) {plyr.rewind(5)}
+          if(e.clientX < 600) {plyr.rewind(10)}
           else if(e.clientX < 830 && e.clientX > 600 ) {plyr.togglePlay()}
           else if(e.clientX > 830) {plyr.forward(10)} 
         })
