@@ -20,7 +20,7 @@ function Videoplayer({ slideIn, handleSlideIn }) {
 
         plyr.on('dblclick',(e)=>{
           //console.log(e.clientX)
-          const rect = event.target.getBoundingClientRect();
+          const rect = e.target.getBoundingClientRect();
           const left = rect.left;
           const right = rect.right;
           if(e.clientX < left + 300) {plyr.rewind(10)}
