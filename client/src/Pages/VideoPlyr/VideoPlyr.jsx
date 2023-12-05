@@ -20,9 +20,12 @@ function Videoplayer({ slideIn, handleSlideIn }) {
 
         plyr.on('dblclick',(e)=>{
           //console.log(e.clientX)
-          if(e.clientX < 600) {plyr.rewind(10)}
-          else if(e.clientX < 830 && e.clientX > 600 ) {plyr.togglePlay()}
-          else if(e.clientX > 830) {plyr.forward(10)} 
+          const rect = event.target.getBoundingClientRect();
+          const left = rect.left;
+          const right = rect.right;
+          if(e.clientX < left + 300) {plyr.rewind(10)}
+          else if(e.clientX < right - 300 && e.clientX > left+300 ) {plyr.togglePlay()}
+          else if(e.clientX > right - 300) {plyr.forward(10)} 
         })
     }
 }, []);
