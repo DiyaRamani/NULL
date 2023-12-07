@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://intern-f7feadbf478c.herokuapp.com/",
+  baseURL: "https://null-backend.onrender.com/",
 });
 
 API.interceptors.request.use((req) => {
